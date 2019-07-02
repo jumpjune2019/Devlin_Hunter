@@ -1,0 +1,139 @@
+<!doctype HTML>
+<!--LEFT TO DO
+   RESET == undox5
+   UNDO button
+-->
+<html>
+  <head>
+    <title>Quiz Game</title>
+    <link rel='stylesheet' href='css/quiz.css' />
+    <script src="js/demo.js"></script>
+    <script src="json/quiz.json"></script>
+    <script >
+    //Button swapping
+      $.ready(function() {
+        $.addEvent($.get('btn'), 'click', function() {
+            console.log("button push");
+               if(this.value == "start") {
+                       this.value = "submit";
+                       resetTime();
+                       quizStart();
+                    //add dynamic html for answers starting and timers
+                    //term.childnode.getAttribute
+          } else {
+            if(this.value == "submit") {
+              //turn off undo button. make elemonts non draggable
+              stopTime();
+                var stopDrag=document.getElementsByClassName("term");
+                for(var i=0;i<stopDrag.length;i++){
+                  stopDrag[i].setAttribute("draggable","false");
+                }
+                document.getElementById("undo").disabled=true;
+                this.value="Show Score";
+            } else {
+              if (this.value=="Show Score"){
+                this.value="Play Again";
+                var score=0;
+                var scoreLabel=document.getElementById("scoreBoard");
+                for(var i=0;i<5;i++){
+                  var dropString= "drop"+(i+1);
+                  var questionCheck="term"+(i+1);
+                  var questionChecker= document.getElementById(dropString).firstChild;
+                  if (document.getElementById(dropString).hasChildNodes()){
+                    if((questionChecker.getAttribute("qCheck"))===(document.getElementById(dropString).getAttribute("aCheck"))){
+                      console.log("Passed");
+                      questionChecker.setAttribute("style","background-color:green");
+                      score++;
+                      scoreLabel.innerHTML=score;
+                    }
+                    else {
+                      questionChecker.setAttribute("style","background-color:red");
+                      console.log("failed");
+                    }
+
+                  }
+                  else {
+                    document.getElementById(dropString).setAttribute("style","background-color:red");
+                  }
+                }
+              }else {
+                if (this.value=="Play Again"){
+                  document.getElementById("undo").disabled=false;
+
+                  var startDrag=document.getElementsByClassName("term");
+                  for(var i=0;i<startDrag.length;i++){
+                    startDrag[i].setAttribute("draggable","true");
+                    startDrag[i].setAttribute("style","background-color:blue");
+                  }
+                  resetTime();
+                  quizStart();
+                  this.value="submit";
+                  location.reload();
+                }
+              console.log("else");
+            }
+
+            }
+            //this.value =( this.value == "pause" )? "submit" : "pause";
+          }
+        });
+      });
+
+</script>
+  </head>
+  <body>
+    <h1 align="middle">Quiz Game</h1>
+    <div>
+      <input type='button'  value='start' id='btn' />
+      <label id="minutes">00</label>:<label id="seconds">00</label>
+      <!-- calling other javascript file to get timer to work has to be after the label timer -->
+      <script src="js/quiz.js"></script>
+      <input type=button value="reset" onclick="location.reload()"</p><br/>
+    </div>
+    <label id="scoreBoard">0</label>/<label id=totalScore>5</label>
+    <p id='Undo'><input type=button value="undo" id="undo" onclick="undo()" style="visibility:hidden"/></p><br/><br/>
+    <div class="groupA" ondragstart="drag(event)">
+    <table id="table1">
+      <tr>
+          <td><div class="term" id="term1" qCheck="1" draggable="true" style="background-color:blue">Term1</div></td>
+        </tr>
+        <tr>
+          <td><div class="term" draggable="true" qCheck="2" id="term2" style="background-color:blue">Term2</div></td>
+        </tr>
+        <tr>
+          <td><div class="term" draggable="true" qCheck="3" id="term3" style="background-color:blue">Term3</div></td>
+        </tr>
+        <tr>
+          <td><div class="term" draggable="true" qCheck="4" id="term4" style="background-color:blue">Term4</div></td>
+        </tr>
+        <tr>
+          <td><div class="term" draggable="true" qCheck="5" id="term5" style="background-color:blue">Term5</div></td>
+        </tr>
+      </table>
+    </div>
+    <div class="groupB">
+      <table id="table2">
+        <tr>
+          <td><div class="termSlot" id="drop1" aCheck="1" onDrop="drop(event)" ondragover="allowDrop(event)" ></div></td>
+          <td><div class="answer" id="answer1" aCheck="1">Answer1</div></td>
+        </tr>
+        <tr>
+          <td><div class="termSlot" id="drop2" onDrop="drop(event)" aCheck="2" ondragover="allowDrop(event)" ></div></td>
+          <td><div class="answer" id="answer2" aCheck="2">Answer2</div></td>
+        </tr>
+        <tr>
+          <td><div class="termSlot"  id="drop3" onDrop="drop(event)" ondragover="allowDrop(event)" aCheck="3"></div></td>
+          <td><div class="answer" id="answer3" aCheck="3">Answer3</div></td>
+        </tr>
+        <tr>
+          <td><div class="termSlot"  id="drop4" onDrop="drop(event)" ondragover="allowDrop(event)" aCheck="4"></div></td>
+          <td><div class="answer" id="answer4" aCheck="4">Answer4</div></td>
+        </tr>
+        <tr>
+          <td><div class="termSlot"  id="drop5" onDrop="drop(event)" ondragover="allowDrop(event)" aCheck="5"></div></td>
+          <td><div class="answer" id="answer5" aCheck="5">Answer5</div></td>
+        </tr>
+      </table>
+    </div>
+  </body>
+</html>

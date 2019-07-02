@@ -1,0 +1,127 @@
+[
+  {
+  "id":"1",
+  "question":"What animal is chicken made from",
+  "answer": "Chicken"
+},
+  {
+  "id":"2",
+  "question":"What animal is beef made from",
+  "answer": "Cow"
+},
+  {
+  "id":"3",
+  "question":"What animal is pork made from",
+  "answer": "Pig"
+},
+  {
+  "id":"4",
+  "question":"Do you ever feel",
+  "answer": "Like a plastic bag?"
+},
+  {
+  "id":"5",
+  "question":"Pc or Mac",
+  "answer": "Pc"
+},
+  {
+  "id":"6",
+  "question":"Why are there no question marks for the questions",
+  "answer": "Punctuation is lame"
+},
+  {
+  "id":"7",
+  "question":"When was the war of 1912",
+  "answer": "1912"
+},
+  {
+  "id":"8",
+  "question":"What should you always remember",
+  "answer": "The alamo"
+},
+  {
+  "id":"9",
+  "question":"WHat should you never forget",
+  "answer": "9/11"
+},
+  {
+  "id":"10",
+  "question":"Do you believe in the moon landing",
+  "answer": "Are you implying the moon is real"
+},
+  {
+  "id":"11",
+  "question":"Did you know 25 questions is a lot",
+  "answer": "25 questions is a whole lot"
+},
+  {
+  "id":"12",
+  "question":"How many people does it take to change a lightbuld",
+  "answer": "Hopefully just one"
+},
+  {
+  "id":"13",
+  "question":"What is green and shaped like a bucket",
+  "answer": "Green bucket"
+},
+  {
+  "id":"14",
+  "question":"What is red and shaped like a bucket",
+  "answer": "Green bucket in disguise"
+},
+  {
+  "id":"15",
+  "question":"What is green and has four wheels",
+  "answer": "Grass"
+},
+  {
+  "id":"16",
+  "question":"Who discovered the moon",
+  "answer": "Idk it isnt documented"
+},
+  {
+  "id":"17",
+  "question":"Who ate the first apple",
+  "answer": "Eve"
+},
+  {
+  "id":"18",
+  "question":"Which Eevee-lution is the best",
+  "answer": "Jolteon"
+},
+  {
+  "id":"19",
+  "question":"Which pokemon starter is the best",
+  "answer": "Trick question there are no electric starters (except in yellow)"
+},
+  {
+  "id":"20",
+  "question":"Why am i not asleep right now",
+  "answer": "I am working on this program"
+},
+  {
+  "id":"21",
+  "question":"What liquid is the best liquid",
+  "answer": "Water"
+},
+  {
+  "id":"22",
+  "question":"Which MMO is the best MMO",
+  "answer": "FFXIV"
+},
+  {
+  "id":"23",
+  "question":"Did i mess up my json file",
+  "answer": "I hope not"
+},
+  {
+  "id":"24",
+  "question":"What is the square root of 4",
+  "answer": "Two"
+},
+  {
+  "id":"25",
+  "question":"Is a pound of steel or a pound of feathers heavier",
+  "answer": "Steel"
+  }
+]
