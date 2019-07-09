@@ -132,13 +132,20 @@ public class Phone {
 			else if (answerA.equalsIgnoreCase("n")||quickExit==true){
 				loop=false;
 				dataVerify(data[0][0]);
+				System.out.printf("%-10s","Phonebook App");
+				System.out.println();
+				System.out.printf("%-30s","Name"+"");
+				System.out.printf("%-30s","Phone"+"");
+				System.out.printf("%-30s","City");
+				System.out.println();
 				for (int i=0;i<count;i++) {
 					file.append(String.format("%-30s",data[0][i]));
-					//System.out.printf("%-10s",data[0][i]);
+					System.out.printf("%-30s",data[0][i]);
 					file.append(String.format("%-30s",data[1][i]));
-					//System.out.printf("%-10s",data[0][i]);
+					System.out.printf("%-30s",data[0][i]);
 					file.append(String.format("%-30s",data[2][i]+"\r\n"));
-					//System.out.printf("%-10s",data[0][i]+"\r\n");
+					System.out.printf("%-30s",data[0][i]);
+					System.out.println();
 					file.append("\r\n");
 				}
 				file.close();
