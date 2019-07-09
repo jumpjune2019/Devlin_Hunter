@@ -105,7 +105,7 @@ public class Phone {
 						boolean loopC=true;
 						while(loopC) {
 							System.out.println("The data you entered is, Name is "+ data[0][count]+", the number is "+data[1][count]+" the city is "+data[2][count]+". Is that correct? Y or N");
-							String answerB=input.next();
+							String answerB=input.nextLine();
 							if(answerB.equalsIgnoreCase("Y")) {
 								loopC=false;
 								loopB=false;
